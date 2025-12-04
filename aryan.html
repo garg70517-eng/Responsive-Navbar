@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enhanced Navbar</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background:#f7f7f7;
+}
+
+/* NAVBAR */
+.navbar{
+    position:sticky;
+    top:0;
+    width:100%;
+    background:#ffffff;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    z-index:1000;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 22px;
+}
+
+.logo{
+    font-size:1.6rem;
+    font-weight:700;
+    color:#111;
+}
+
+.nav-links{
+    display:flex;
+    gap:32px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-size:1rem;
+    padding:6px 2px;
+    transition:0.3s;
+}
+
+/* Hover + Active highlight */
+.nav-links a:hover,
+.nav-links a.active{
+    color:#007bff;
+    border-bottom:2px solid #007bff;
+}
+
+/* Hamburger */
+.hamburger{
+    display:none;
+    flex-direction:column;
+    gap:6px;
+    cursor:pointer;
+}
+
+.hamburger span{
+    width:26px;
+    height:3px;
+    background:#333;
+    transition:0.4s;
+}
+
+/* Mobile Menu */
+.mobile-menu{
+    display:none;
+    flex-direction:column;
+    width:92%;
+    margin:10px auto;
+    background:white;
+    padding:12px 10px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.10);
+}
+
+.mobile-menu a{
+    padding:12px 14px;
+    color:#333;
+    text-decoration:none;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.mobile-menu a:hover{
+    background:#eef5ff;
+    color:#007bff;
+}
+
+.mobile-menu a.active{
+    background:#007bff;
+    color:#fff;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+
+    .mobile-menu.active{
+        display:flex;
+        animation:fadeIn 0.35s ease;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(-8px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+
+        <div class="logo">BrandName</div>
+
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#" class="active">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<script>
+function toggleMenu(){
+    document.getElementById("mobileMenu").classList.toggle("active");
+}
+</script>
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
+
+
+</body>
+</html>
