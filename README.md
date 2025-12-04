@@ -1,2 +1,17 @@
-# Responsive-Navbar
-This project is a Responsive Navigation Bar built using HTML and CSS. The navbar includes a brand logo titled "BrandName" along with navigation links — Home, Services, and Contact. It is fully responsive for all screen sizes and features a hamburger menu for mobile devices, which transforms the navigation into a mobile-friendly dropdown menu. 
+# Responsive Navigation Bar
+
+A fully responsive modern navigation bar built using HTML & CSS.
+
+## Features
+- Brand logo "BrandName"
+- Menu: Home | Services | Contact
+- Responsive design for all screens
+- Hamburger menu for mobile devices
+- Smooth hover interactions
+- Sticky navbar while scrolling
+
+## Tech Used
+HTML, CSS
+
+## Live Demo
+🔗 Your_Link_Here
